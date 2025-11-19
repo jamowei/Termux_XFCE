@@ -109,7 +109,7 @@ For specific applications that are being killed in the background (like Termux, 
 Go to Settings > Apps (or Apps & notifications).
 Find the application in question.
 Go to Battery (or Battery usage).
-Select Unrestricted (or Non restreint) for background usage.
+Select Unrestricted (or Non restricted) for background usage.\n
 This may prevent the system from killing the app's process due to excessive battery use, but it does not disable the Phantom Process Killer feature system-wide.
 🚨 Important Considerations:
 Disabling the Phantom Process Killer may increase battery consumption and affect system performance, as it allows background apps to use more resources.
