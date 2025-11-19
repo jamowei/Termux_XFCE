@@ -131,7 +131,7 @@ main() {
 
     # Continue with your existing installation code here
     echo -n "Please enter username for proot installation: " > /dev/tty
-    read username < "default"
+    read username < /dev/tty
 
     # Change repository
 if ! termux-change-repo; then
