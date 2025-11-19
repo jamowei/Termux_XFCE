@@ -210,20 +210,16 @@ wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/dark_waves.p
 mv dark_waves.png $PREFIX/share/backgrounds/xfce/
 
 # Install WhiteSur-Dark Theme
-wget https://github.com/vinceliuice/WhiteSur-gtk-theme/archive/refs/tags/2023-04-26.zip
-unzip 2023-04-26.zip
-tar -xf WhiteSur-gtk-theme-2023-04-26/release/WhiteSur-Dark-44-0.tar.xz
+wget https://github.com/vinceliuice/WhiteSur-gtk-theme/raw/5039b1b2b55c7439e5de7af25bef319681f3c5d3/release/WhiteSur-Dark-44-0.tar.xz
+tar -xf WhiteSur-Dark-44-0.tar.xz
 mv WhiteSur-Dark/ $PREFIX/share/themes/
 rm -rf WhiteSur*
-rm 2023-04-26.zip
 
 # Install Fluent Cursor Icon Theme
-wget https://github.com/vinceliuice/Fluent-icon-theme/archive/refs/tags/2023-02-01.zip
-unzip 2023-02-01.zip
-mv Fluent-icon-theme-2023-02-01/cursors/dist $PREFIX/share/icons/ 
-mv Fluent-icon-theme-2023-02-01/cursors/dist-dark $PREFIX/share/icons/
+git clone -b 2023-02-01 --single-branch https://github.com/vinceliuice/Fluent-icon-theme
+mv Fluent-icon-theme/cursors/dist $PREFIX/share/icons/ 
+mv Fluent-icon-theme/cursors/dist-dark $PREFIX/share/icons/
 rm -rf $HOME//Fluent*
-rm 2023-02-01.zip
 
 # Create xsettings.xml for Termux
 cat <<'EOF' > $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
@@ -841,8 +837,8 @@ pd login debian --shared-tmp -- env DISPLAY=:0 rm /etc/localtime
 pd login debian --shared-tmp -- env DISPLAY=:0 cp /usr/share/zoneinfo/$timezone /etc/localtime
 
 # Setup Hardware Acceleration in proot
-pd login debian --shared-tmp -- env DISPLAY=:0 wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
-pd login debian --shared-tmp -- env DISPLAY=:0 sudo apt install -y ./mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
+pd login debian --shared-tmp -- env DISPLAY=:0 apt update && apt upgrade -y
+pd login debian --shared-tmp -- env DISPLAY=:0 sudo apt install -y mesa-vulkan-drivers
 
 mkdir -p $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config/
 
@@ -908,4 +904,4 @@ echo -e "${YELLOW}Installation complete! Use 'start' to launch your desktop envi
 
 source $PREFIX/etc/bash.bashrc
 termux-reload-settings
-rm install_xfce_native.sh
+rm install.sh
