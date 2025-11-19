@@ -71,22 +71,23 @@ Several aliases are provided to simplify launching applications:
 
 ### 1. Disable via Developer Options (Android 12L+)
 
-​On some devices running Android 12L, Android 13, or Android 14 (especially Pixel or "Stock" Android devices), you might find a toggle switch within the Developer Options.
+- ​On some devices running Android 12L, Android 13, or Android 14 (especially Pixel or "Stock" Android devices), you might find a toggle switch within the Developer Options.
 ​Steps:
-​Enable Developer Options:
-​Go to Settings > About phone.
-​Tap repeatedly on the Build number (or MIUI version, etc., depending on your manufacturer) until you see a message stating you are now a developer.
-​Disable the Restriction:
-​Go back to Settings > System (or Additional Settings) > Developer options.
-​Look for an option called Disable child processes restrictions (or something similar).
-​Toggle this switch ON to disable the Phantom Process Killer feature.
+- ​Enable Developer Options:
+- ​Go to Settings > About phone.
+- ​Tap repeatedly on the Build number (or MIUI version, etc., depending on your manufacturer) until you see a message stating you are now a developer.
+- ​Disable the Restriction:
+- ​Go back to Settings > System (or Additional Settings) > Developer options.
+- ​Look for an option called Disable child processes restrictions (or something similar).
+- ​Toggle this switch ON to disable the Phantom Process Killer feature.
 
 ### 2. Disable via ADB Commands (For most devices)
-​If the option above is not available (which is often the case on custom UIs like Samsung One UI, Xiaomi MIUI, etc.), you can use ADB (Android Debug Bridge) commands. This requires a computer and ADB setup.
-​Prerequisites:
-​A computer with ADB and Fastboot tools installed.
-​USB Debugging enabled on your phone (in Developer Options).
-​A USB cable to connect your phone to the computer.
+- ​If the option above is not available (which is often the case on custom UIs like Samsung One UI, Xiaomi MIUI, etc.), you can use ADB (Android Debug Bridge) commands. This requires a computer and ADB setup.
+  ​Prerequisites:
+- ​A computer with ADB and Fastboot tools installed.
+- ​USB Debugging enabled on your phone (in Developer Options).
+- ​A USB cable to connect your phone to the computer.
+
 ​Steps:
 
 1. Connect your phone to your computer via USB.
