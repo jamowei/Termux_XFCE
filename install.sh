@@ -764,42 +764,42 @@ chmod +x $PREFIX/bin/zrunhud
 
 # App Installer
 
-git clone https://github.com/jamowei/App-Installer.git $HOME/.config/App-Installer
-chmod +x $HOME/.config/App-Installer/*
+# git clone https://github.com/jamowei/App-Installer.git $HOME/.config/App-Installer
+# chmod +x $HOME/.config/App-Installer/*
 
-echo "[Desktop Entry]
-Version=1.0
-Type=Application
-Name=App Installer
-Comment=
-Exec=/data/data/com.termux/files/home/.config/App-Installer/app-installer
-Icon=package-install
-Categories=System;
-Path=
-Terminal=false
-StartupNotify=false
-" > $HOME/Desktop/App-Installer.desktop
-chmod +x $HOME/Desktop/App-Installer.desktop
-cp $HOME/Desktop/App-Installer.desktop $PREFIX/share/applications
+# echo "[Desktop Entry]
+# Version=1.0
+# Type=Application
+# Name=App Installer
+# Comment=
+# Exec=/data/data/com.termux/files/home/.config/App-Installer/app-installer
+# Icon=package-install
+# Categories=System;
+# Path=
+# Terminal=false
+# StartupNotify=false
+# " > $HOME/Desktop/App-Installer.desktop
+# chmod +x $HOME/Desktop/App-Installer.desktop
+# cp $HOME/Desktop/App-Installer.desktop $PREFIX/share/applications
 
 # cp2menu
 
-wget https://github.com/jamowei/Termux_XFCE/raw/refs/heads/main/cp2menu -O $PREFIX/bin/cp2menu
-chmod +x $PREFIX/bin/cp2menu
+# wget https://github.com/jamowei/Termux_XFCE/raw/refs/heads/main/cp2menu -O $PREFIX/bin/cp2menu
+# chmod +x $PREFIX/bin/cp2menu
 
-echo "[Desktop Entry]
-Version=1.0
-Type=Application
-Name=cp2menu
-Comment=
-Exec=cp2menu
-Icon=edit-move
-Categories=System;
-Path=
-Terminal=false
-StartupNotify=false
-" > $PREFIX/share/applications/cp2menu.desktop
-chmod +x $PREFIX/share/applications/cp2menu.desktop
+# echo "[Desktop Entry]
+# Version=1.0
+# Type=Application
+# Name=cp2menu
+# Comment=
+# Exec=cp2menu
+# Icon=edit-move
+# Categories=System;
+# Path=
+# Terminal=false
+# StartupNotify=false
+# " > $PREFIX/share/applications/cp2menu.desktop
+# chmod +x $PREFIX/share/applications/cp2menu.desktop
 
 # Install Debian proot
 pkgs_proot=('sudo' 'onboard' 'conky-all' 'flameshot')
