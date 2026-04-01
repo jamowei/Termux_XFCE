@@ -12,7 +12,7 @@ This repository provides a script to set up an XFCE desktop environment and a De
 To install, execute the following command in Termux:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/install_xfce_native.sh -o install.sh && bash install.sh
+curl -sL https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/install.sh -o install.sh && bash install.sh
 ```
 
 ## Support and Community
@@ -69,15 +69,49 @@ Several aliases are provided to simplify launching applications:
 
 ### Process Completed (Signal 9) - Press Enter
 
-1. Install LADB from the Play Store or download it from [here](https://github.com/hyperio546/ladb-builds/releases).
-2. Connect to Wi-Fi.
-3. Enable wireless debugging in Developer Settings and note the port number and pairing code.
-4. Enter these values in LADB.
-5. Once connected, run the following command:
+### 1. Disable via Developer Options (Android 12L+)
 
-```bash
-adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
-```
+- ​On some devices running Android 12L, Android 13, or Android 14 (especially Pixel or "Stock" Android devices), you might find a toggle switch within the Developer Options.
+​Steps:
+- ​Enable Developer Options:
+- ​Go to Settings > About phone.
+- ​Tap repeatedly on the Build number (or MIUI version, etc., depending on your manufacturer) until you see a message stating you are now a developer.
+- ​Disable the Restriction:
+- ​Go back to Settings > System (or Additional Settings) > Developer options.
+- ​Look for an option called Disable child processes restrictions (or something similar).
+- ​Toggle this switch ON to disable the Phantom Process Killer feature.
 
-You can also run `adb shell` directly from Termux by following the guide in this video:  
-[YouTube Guide](https://www.youtube.com/watch?v=BHc7uvX34bM)
+### 2. Disable via ADB Commands (For most devices)
+- ​If the option above is not available (which is often the case on custom UIs like Samsung One UI, Xiaomi MIUI, etc.), you can use ADB (Android Debug Bridge) commands. This requires a computer and ADB setup.
+  ​Prerequisites:
+- ​A computer with ADB and Fastboot tools installed.
+- ​USB Debugging enabled on your phone (in Developer Options).
+- ​A USB cable to connect your phone to the computer.
+
+​Steps:
+
+1. Connect your phone to your computer via USB.
+2. Open a Command Prompt (Windows) or Terminal (macOS/Linux) on your computer.
+3. Verify the connection by typing:
+   `adb devices`
+   You should see your device listed. If a pop-up appears on your phone, allow USB debugging.
+4. Execute the following commands one by one to disable the Phantom Process Killer:
+   `adb shell "settings put global settings_enable_monitor_phantom_procs false"
+   adb shell "settings put global settings_phantom_process_kill_timeout 30000"`
+   - The first command disables the phantom process monitor.
+   - The second command increases the timeout before termination, providing an extra safeguard.
+5. Restart your phone to ensure the changes take effect.
+   - Note: You can also perform this manipulation directly on your phone using the Termux application with wireless ADB, but the procedure is more complex.
+
+
+### 3. Per-App Solution (Less Effective)
+
+- For specific applications that are being killed in the background (like Termux, for example), you can sometimes work around the issue by changing the battery management settings for that app:
+- Go to Settings > Apps (or Apps & notifications).
+- Find the application in question (Termux).
+- Go to Battery (or Battery usage).
+- Select Unrestricted (or Non restricted) for background usage.\n
+- This may prevent the system from killing the app's process due to excessive battery use, but it does not disable the Phantom Process Killer feature system-wide.
+#### 🚨 Important Considerations:
+- Disabling the Phantom Process Killer may increase battery consumption and affect system performance, as it allows background apps to use more resources.
+- The ADB method is the most reliable on non-stock devices but requires basic technical knowledge.
