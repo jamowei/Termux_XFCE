@@ -202,11 +202,11 @@ eval "$(starship init bash)"
 " >> $PREFIX/etc/bash.bashrc
 
 # Download starship theme
-curl -o $HOME/.config/starship.toml https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/refs/heads/main/starship.toml
-sed -i "s/phoenixbyrd/$username/" $HOME/.config/starship.toml
+curl -o $HOME/.config/starship.toml https://raw.githubusercontent.com/jamowei/Termux_XFCE/refs/heads/main/starship.toml
+sed -i "s/jamowei/$username/" $HOME/.config/starship.toml
 
 # Download Wallpaper
-wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/dark_waves.png
+wget https://raw.githubusercontent.com/jamowei/Termux_XFCE/main/dark_waves.png
 mv dark_waves.png $PREFIX/share/backgrounds/xfce/
 
 # Install WhiteSur-Dark Theme
@@ -635,10 +635,10 @@ rm Meslo.zip
 rm LICENSE.txt
 rm readme.md
 
-wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/NotoColorEmoji-Regular.ttf
+wget https://github.com/jamowei/Termux_XFCE/raw/main/NotoColorEmoji-Regular.ttf
 mv NotoColorEmoji-Regular.ttf .fonts
 
-wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/font.ttf
+wget https://github.com/jamowei/Termux_XFCE/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
 # Create start script
@@ -764,7 +764,7 @@ chmod +x $PREFIX/bin/zrunhud
 
 # App Installer
 
-git clone https://github.com/phoenixbyrd/App-Installer.git $HOME/.config/App-Installer
+git clone https://github.com/jamowei/App-Installer.git $HOME/.config/App-Installer
 chmod +x $HOME/.config/App-Installer/*
 
 echo "[Desktop Entry]
@@ -784,7 +784,7 @@ cp $HOME/Desktop/App-Installer.desktop $PREFIX/share/applications
 
 # cp2menu
 
-wget https://github.com/phoenixbyrd/Termux_XFCE/raw/refs/heads/main/cp2menu -O $PREFIX/bin/cp2menu
+wget https://github.com/jamowei/Termux_XFCE/raw/refs/heads/main/cp2menu -O $PREFIX/bin/cp2menu
 chmod +x $PREFIX/bin/cp2menu
 
 echo "[Desktop Entry]
@@ -843,8 +843,8 @@ pd login debian --shared-tmp -- env DISPLAY=:0 sudo apt install -y mesa-vulkan-d
 mkdir -p $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config/
 
 # Download proot starship theme
-curl -o $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config/starship.toml https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/refs/heads/main/starship_proot.toml
-sed -i "s/phoenixbyrd/$username/" $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config/starship.toml
+curl -o $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config/starship.toml https://raw.githubusercontent.com/jamowei/Termux_XFCE/refs/heads/main/starship_proot.toml
+sed -i "s/jamowei/$username/" $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config/starship.toml
 
 # Apply cursor theme
 cp -r $PREFIX/share/icons/dist-dark $PREFIX/var/lib/proot-distro/installed-rootfs/debian/usr/share/icons/dist-dark
@@ -852,7 +852,7 @@ cat <<'EOF' > $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$usernam
 Xcursor.theme: dist-dark
 EOF
 
-wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/conky.tar.gz
+wget https://github.com/jamowei/Termux_XFCE/raw/main/conky.tar.gz
 tar -xvzf conky.tar.gz
 rm conky.tar.gz
 mv $HOME/.config/conky/ $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config/

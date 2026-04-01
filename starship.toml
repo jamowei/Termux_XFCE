@@ -20,7 +20,7 @@ disabled = false
 # Hostname settings
 [hostname]
 ssh_only = false
-format =  "[phoenixbyrd](bold yellow) @ [termux](bold red)"
+format =  "[jamowei](bold yellow) @ [termux](bold red)"
 trim_at = ".companyname.com"
 disabled = false
 
