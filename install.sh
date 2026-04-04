@@ -625,7 +625,7 @@ EOF
 
 # Setup Fonts
 wget https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip
-unzip CascadiaCode-2111.01.zip
+unzip -o CascadiaCode-2111.01.zip
 mv -f otf/static/* .fonts/ && rm -rf otf
 mv -f ttf/* .fonts/ && rm -rf ttf/
 rm -rf woff2/ && rm -rf CascadiaCode-2111.01.zip
