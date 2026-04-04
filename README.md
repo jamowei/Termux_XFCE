@@ -24,12 +24,6 @@ For questions, assistance, or suggestions, join our Discord community:
 
 ![Desktop Screenshot](screenshot2.png)
 
-## Use Case
-
-This setup is optimized for use on devices like the Samsung Galaxy Fold 3, functioning as a PC/laptop replacement when connected to a monitor, keyboard, and mouse. It is designed for daily use and serves as a personal daily driver.
-
-![Samsung Galaxy Fold 3 - Dex Setup](desk.jpg)
-
 ## Starting the Desktop
 
 To start the desktop, use the following command:
